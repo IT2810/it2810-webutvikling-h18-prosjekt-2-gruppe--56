@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
+import Tab from "./Tab.js"
 import "./Tabsbar.css"
 
-export function Tab(props) {
-	/*Should retrive handleTabClick-event from Art-Pane*/
-	return <div>Picture {props.index}</div>
-}
 
 export default function Tabsbar(props){
 	return (<div className = "Tabsbar">
