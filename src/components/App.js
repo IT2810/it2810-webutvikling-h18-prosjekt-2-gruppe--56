@@ -11,9 +11,16 @@ import CategoryPane from './CategoryPane.js'
 class App extends Component {
     render() {
         return (
+            //Må være flex-container
             <div className="App">
-                <Tabsbar/>
-                <CategoryPane/>
+                <div className= "flex-item1">
+                  <Tabsbar/>
+                  <div className ="artPane - will be here">
+                  </div>
+                </div>
+                <div className = "flex-item2">
+                  <CategoryPane/>
+                </div>
             </div>
         );
     }
