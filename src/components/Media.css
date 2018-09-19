@@ -1,15 +1,15 @@
 .media-flex-item{
   display:flex;
   flex-direction:column;
-  align-items: baseline;
-  flex-wrap: wrap;
-  width:200px;
   background:green;
-  margin:2px;
+  width:100%;
+  flex-grow:1;
+  box-shadow:0 0 2px 2px black;
+
+
 
 }
 .media-form{
-  flex-grow:2;
   margin-left:2px;
   margin-bottom:4px;
 }
