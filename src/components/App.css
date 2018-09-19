@@ -3,6 +3,19 @@
   height: 80px;
 }
 
+.App{
+  display:flex;
+  flex-direction:row;
+  flex-grow: 1;
+  height:100vh;
+
+}
+.flex-item1{
+  width:85%;
+}
+.flex-item2{
+  width:15%;
+}
 .App-header {
   background-color: #222;
   height: 150px;
