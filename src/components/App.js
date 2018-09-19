@@ -22,27 +22,5 @@ class App extends Component {
     );
   }
 }
-//
-
-/*
-If good website with dynamic content
-const categoryPicture = ["Dyr","Mat","Kjøretøy"];
-const categoryText = ["Ibsen","Lotepus","Modleifen"];
-const categoryData = [createDataList(categoryPicture, "Pictures" , 0),
-createDataList(categoryText, "Text", 1)];
-console.log(categoryData);
-*/
-/*format:    [{id : 0,
-name : "Pictures",
-array: [{id : 0, text : "Dyr", ....}]}]
-*/
-//Should make static counter or pass an argument as id, but easylife
-
 
 export default App;
-//Eksempel bruk av category og Media
-/*
-<Category text = "Katt"/>
-<br></br>
-<Media name = "picture" categories = {[{id:0, name:"Dyr"},{id:1 , name:"Biler"},{id:2, name:"Peperonice"}]}/>
-*/
