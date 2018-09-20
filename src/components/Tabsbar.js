@@ -9,10 +9,7 @@ export default function Tabsbar(props){
 
 	return (<div className = "Tabsbar">
 	<div className="desktop">
-		<Tab index ={0}/>
-		<Tab index = {1}/>
-		<Tab index = {2}/>
-		<Tab index = {3}/>
+		{indexes.map(Index => <Tab index ={Index} handleTabClick = {props.handleTabClick} active = {false}/>)}
 	</div>
 	<div className = "Mobile">
 		<div classID="row1">

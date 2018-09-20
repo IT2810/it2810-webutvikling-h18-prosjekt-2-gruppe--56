@@ -16,10 +16,14 @@ class App extends Component {
     }
 
     handleTabClick(tabID) {
-
+        this.setState({
+            activeTab: tabID
+        })
+        console.log(tabID);
     }
 
     render() {
+        console.log(this.state.activeTab);
         return (
             <div className="App">
                 <div className ="headPane">

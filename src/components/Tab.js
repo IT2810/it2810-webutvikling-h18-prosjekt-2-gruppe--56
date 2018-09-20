@@ -4,8 +4,19 @@ import "./Tab.css"
 /*Should retrive handleTabClick-event from App*/
 class Tab extends Component{
 	render() {
-		return
-		<div className="Tab">Art {props.index + 1} onClick={props.handleTabClick(props.index)}</div>
+
+		const styles = {
+			color: "#01FF70",
+			borderBottom: "5px solid #01FF70"
+		}
+
+		console.log(this.props.active);
+
+		return(
+		<div className="Tab" onClick={() => this.props.handleTabClick(this.props.index)} style = {
+				this.props.active == true ? styles : {}
+			}>
+				Art {this.props.index + 1}</div>);
 	}
 }
 
