@@ -1,0 +1,99 @@
+
+"imageAutumn": {
+    "src": "/res/Image/Seasons/autumn.svg",
+    "name": "autumn",
+    "category":"Seasons",
+    "hOffset": 250,
+    "vOffset": 250,
+    "alignment": "center"
+  }
+
+    "imagewinter": {
+        "src": "/res/Image/Seasons/winter.svg",
+        "name": "winter",
+        "category":"Seasons",
+        "hOffset": 250,
+        "vOffset": 250,
+        "alignment": "center"
+}
+        "imagespring": {
+            "src": "/res/Image/Seasons/spring.svg",
+            "name": "spring",
+            "category":"Seasons",
+            "hOffset": 250,
+            "vOffset": 250,
+            "alignment": "center"
+}
+            "imageSummer": {
+                "src": "/res/Image/Seasons/summer.svg",
+                "name": "summer",
+                "category":"Seasons",
+                "hOffset": 250,
+                "vOffset": 250,
+                "alignment": "center"
+    }
+
+    "imageLion": {
+        "src": "/res/Image/Animals/Lion.svg",
+        "name": "Lion",
+        "category":"Animals",
+        "hOffset": 250,
+        "vOffset": 250,
+        "alignment": "center"
+}
+"imagecat": {
+    "src": "/res/Image/Animals/Cat.svg",
+    "name": "Cat",
+    "category":"Animals",
+    "hOffset": 250,
+    "vOffset": 250,
+    "alignment": "center"
+}
+"imageDog": {
+    "src": "/res/Image/Animals/Dog.svg",
+    "name": "dog",
+    "category":"Animals",
+    "hOffset": 250,
+    "vOffset": 250,
+    "alignment": "center"
+}
+"imageZebra": {
+    "src": "/res/Image/Animals/Zebra.svg",
+    "name": "Zebra",
+    "category":"Animals",
+    "hOffset": 250,
+    "vOffset": 250,
+    "alignment": "center"
+}
+"imagebatman": {
+    "src": "/res/Image/Superheros/Batman.svg",
+    "name": "Batman",
+    "category":"Superheros",
+    "hOffset": 250,
+    "vOffset": 250,
+    "alignment": "center"
+}
+"imagesuperman": {
+    "src": "/res/Image/Superheros/Superman.svg",
+    "name": "Superman",
+    "category":"Superheros",
+    "hOffset": 250,
+    "vOffset": 250,
+    "alignment": "center"
+}
+"imageSupergirl": {
+    "src": "/res/Image/Superheros/Supergirl.svg",
+    "name": "Supergirl",
+    "category":"Superheros",
+    "hOffset": 250,
+    "vOffset": 250,
+    "alignment": "center"
+}
+"imageSpideman": {
+    "src": "/res/Image/Superheros/Spiderman.svg",
+    "name": "Spiderman",
+    "category":"Superheros",
+    "hOffset": 250,
+    "vOffset": 250,
+    "alignment": "center"
+}
