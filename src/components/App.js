@@ -6,6 +6,7 @@ import Tittel from './Tittel.js';
 import Art from './Art.js';
 
 class App extends Component {
+<<<<<<< HEAD
   constructor(props){
     super(props);
     this.handleCategoryClick = this.handleCategoryClick.bind(this);
@@ -28,6 +29,33 @@ class App extends Component {
                   <CategoryPane method ={this.handleCategoryClick}/>
               </div>
             </div>
+=======
+    constructor(props){
+      super(props);
+      this.handleCategoryClick = this.handleCategoryClick.bind(this);
+    }
+
+    handleCategoryClick = (id) => {
+      //do something
+      console.log(id);
+    }
+    render() {
+        return (
+            <div className="App">
+                <div className ="headPane">
+                    <Tittel artName = "Tittel..." />
+                    <Tabsbar />
+                </div>
+                <div className = "bodyPane">
+                    <Art />
+                    <CategoryPane />
+                </div>
+              </div>
+              <div className = "flex-item2">
+                <CategoryPane method ={this.handleCategoryClick}/>
+              </div>
+          </div>
+>>>>>>> 9dd3345c04dd1068014174fd47a009e547e1c309
       );
   }
 }
