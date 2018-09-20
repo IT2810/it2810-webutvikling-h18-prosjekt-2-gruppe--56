@@ -1,26 +1,16 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import './App.css';
-import Category from './Category';
-import Media from './Media';
-import Tabsbar from './Tabsbar.js';
-import Bilde from './Bilde.js';
-import CategoryPane from './CategoryPane.js'
+import CategoryPane from './CategoryPane.js';
+import ArtPane from './Artpane.js';
+
 
 
 class App extends Component {
     render() {
         return (
-            //Må være flex-container
             <div className="App">
-                <div className= "flex-item1">
-                  <Tabsbar/>
-                  <div className ="artPane - will be here">
-                  </div>
-                </div>
-                <div className = "flex-item2">
-                  <CategoryPane/>
-                </div>
+                <ArtPane />
+                <CategoryPane />
             </div>
         );
     }
