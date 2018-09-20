@@ -4,12 +4,10 @@ import "./Tabsbar.css"
 
 
 export default function Tabsbar(props){
+	const indexes = [0,1,2,3];
 	return (<div className = "Tabsbar">
 	<div className="desktop">
-		<Tab index ={0}/>
-		<Tab index = {1}/>
-		<Tab index = {2}/>
-		<Tab index = {3}/>
+		{indexes.map(Index => <Tab index = {Index}/>)}
 	</div>
 	<div className = "Mobile">
 		<div classID="row1">
