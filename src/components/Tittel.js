@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './Tittel.css';
 
-
-
 class Tittel extends Component {
     render() {
         return (
