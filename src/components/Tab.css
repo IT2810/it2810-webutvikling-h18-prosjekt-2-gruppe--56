@@ -1,0 +1,29 @@
+.Tab{
+	color: white;
+	text-align: center;
+	padding: 30px 0;
+	flex-grow: 1;
+}
+
+.Tab:hover{
+	color: green;
+	cursor: pointer;
+	border-bottom: 5px solid green;
+}
+
+
+
+@media screen only and (max-witdh: 480px) {
+	.Tab{
+		color: white;
+		text-align: center;
+		padding: 25px 0;
+		flex-grow: 1;
+	}
+
+	.Tab:hover{
+		color: green;
+		cursor: pointer;
+		border-bottom: 3px solid green;
+	}
+}
