@@ -23,7 +23,6 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.state.activeTab);
         return (
             <div className="App">
                 <div className ="headPane">
