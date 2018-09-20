@@ -1,8 +1,19 @@
-import React from 'react';
+import React, {Component} from 'react';
 import "./Tab.css"
 
+/*Should retrive handleTabClick-event from App*/
+class Tab extends Component{
+	render() {
+		const styles = {
+			color: "#01FF70",
+			borderBottom: "5px solid #01FF70"
+		}
 
-export default function Tab(props) {
-	/*Should retrive handleTabClick-event from Art-Pane*/
-	return <div className="Tab">Art {props.index + 1}</div>
+		return(
+		<div className="Tab" onClick={() => this.props.handleTabClick(this.props.index)} style = {
+				this.props.active == true ? styles : {} }>
+				Art {this.props.index + 1}</div>);
+	}
 }
+
+export default Tab;

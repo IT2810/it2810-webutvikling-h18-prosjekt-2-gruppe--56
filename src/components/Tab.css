@@ -11,8 +11,6 @@
 	border-bottom: 5px solid #01FF70;
 }
 
-
-
 @media screen only and (max-witdh: 480px) {
 	.Tab{
 		color: white;
