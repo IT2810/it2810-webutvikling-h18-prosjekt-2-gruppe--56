@@ -9,21 +9,30 @@ import CategoryPane from './CategoryPane.js'
 
 
 class App extends Component {
-    render() {
-        return (
-            //Må være flex-container
-            <div className="App">
-                <div className= "flex-item1">
-                  <Tabsbar/>
-                  <div className ="artPane - will be here">
-                  </div>
+  constructor(props){
+    super(props);
+    this.handleCategoryClick = this.handleCategoryClick.bind(this);
+  }
+
+  handleCategoryClick = (id) => {
+    //do something
+    console.log(id);
+  }
+  render() {
+      return (
+          //Må være flex-container
+          <div className="App">
+              <div className= "flex-item1">
+                <Tabsbar/>
+                <div className ="artPane - will be here">
                 </div>
-                <div className = "flex-item2">
-                  <CategoryPane/>
-                </div>
-            </div>
-        );
-    }
+              </div>
+              <div className = "flex-item2">
+                <CategoryPane method ={this.handleCategoryClick}/>
+              </div>
+          </div>
+      );
+  }
 }
 
 export default App;
