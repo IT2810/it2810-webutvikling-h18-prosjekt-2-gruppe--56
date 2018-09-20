@@ -1,0 +1,8 @@
+.Bilde {
+	max-width: 800px;
+	min-width: 400px;
+	max-height: 600px;
+	min-height: 300px;
+	margin: 5% 5% 2% 5%;
+	overflow: scroll;
+}

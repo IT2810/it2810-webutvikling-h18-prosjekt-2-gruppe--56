@@ -1,21 +1,56 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import './App.css';
+import CategoryPane from './CategoryPane.js';
+import Tabsbar from './Tabsbar.js';
+import Tittel from './Tittel.js';
+import Art from './Art.js';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+
+    constructor(props){
+        super(props);
+        this.state = {
+            activeTab: 0
+        }
+        this.handleTabClick = this.handleTabClick.bind(this);
+        this.handleCategoryClick = this.handleCategoryClick.bind(this);
+    }
+
+    handleTabClick(tabID) {
+        this.setState({
+            activeTab: tabID
+        })
+        console.log(tabID);
+    }
+
+    handleCategoryClick = (id) => {
+      //do something
+      console.log(id);
+    }
+
+    render() {
+        return (
+        <div className="App">
+            <div className ="headPane">
+                <Tittel artName = "Tittel..." />
+                <Tabsbar handleTabClick={this.handleTabClick} acticeTab ={this.state.activeTab} />
+            </div>
+            <div className = "bodyPane">
+                <Art />
+                <CategoryPane method ={this.handleCategoryClick}/>
+            </div>
+        </div>
+      );
   }
 }
 
 export default App;
+//Eksempel bruk av category og Media
+/*
+<Category text = "Katt"/>
+<br></br>
+<Media name = "picture" categories = {[{id:0, name:"Dyr"},{id:1 , name:"Biler"},{id:2, name:"Peperonice"}]}/>
+*/
+
+// Include  <Tabsbar/> in Apps div-tag too render Tabsbar
+// include <Bilde svg="<svg>..." to render picture
