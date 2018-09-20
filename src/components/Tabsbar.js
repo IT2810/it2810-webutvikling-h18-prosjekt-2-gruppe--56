@@ -4,6 +4,9 @@ import "./Tabsbar.css"
 
 
 export default function Tabsbar(props){
+
+	const indexes = [0,1,2,3];
+
 	return (<div className = "Tabsbar">
 	<div className="desktop">
 		<Tab index ={0}/>

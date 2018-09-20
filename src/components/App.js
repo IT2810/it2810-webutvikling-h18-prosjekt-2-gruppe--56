@@ -6,12 +6,25 @@ import Tittel from './Tittel.js';
 import Art from './Art.js';
 
 class App extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            activeTab: 0
+        }
+        this.handleTabClick = this.handleTabClick.bind(this);
+    }
+
+    handleTabClick(tabID) {
+
+    }
+
     render() {
         return (
             <div className="App">
                 <div className ="headPane">
                     <Tittel artName = "Tittel..." />
-                    <Tabsbar />
+                    <Tabsbar handleTabClick={this.handleTabClick} acticeTab ={this.state.activeTab} />
                 </div>
                 <div className = "bodyPane">
                     <Art />
