@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Category.css'
 
 //Creates category component. Remove export default only needed for testing.
@@ -10,8 +10,10 @@ export default function Category(props){
   //Method should include id from category
 
   //Har en props.id som kan brukes til å gi beskjed onCLick til App
+  //Props.name is neccessary to make radiobuttons in component "talk" together
+
   return (<div className = "category" id = {props.id}>
-      <input type = "radio" name = {props.name}/>
+      <input type = "radio" name = {props.name} onClick ={() => props.click(props.id)}/>
       <label>{props.text}</label>
     </div>);
 }
