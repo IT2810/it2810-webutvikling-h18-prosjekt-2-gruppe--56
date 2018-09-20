@@ -33,7 +33,7 @@ class App extends Component {
         <div className="App">
             <div className ="headPane">
                 <Tittel artName = "Tittel..." />
-                <Tabsbar handleTabClick={this.handleTabClick} acticeTab ={this.state.activeTab} />
+                <Tabsbar handleTabClick={this.handleTabClick} activeTab ={this.state.activeTab} />
             </div>
             <div className = "bodyPane">
                 <Art />
