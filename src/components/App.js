@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 import CategoryPane from './CategoryPane.js';
-import ArtPane from './Artpane.js';
-
-
+import Tabsbar from './Tabsbar.js';
+import Tittel from './Tittel.js';
+import Art from './Art.js';
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <ArtPane />
-                <CategoryPane />
+                <div className ="headPane">
+                    <Tittel artName = "Tittel..." />
+                    <Tabsbar />
+                </div>
+                <div className = "bodyPane">
+                    <Art />
+                    <CategoryPane />
+                </div>
             </div>
         );
     }
