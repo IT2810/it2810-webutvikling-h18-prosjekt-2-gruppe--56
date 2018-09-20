@@ -6,7 +6,7 @@ class Bilde extends Component {
     render() {
     	return (
 			<div className = "Bilde">
-				<ReactSVG svg={this.props.svg}/>
+                {()  => { this.props ? <ReactSVG svg={this.props.svg}/> : null} }
 			</div>
     	);
     }
