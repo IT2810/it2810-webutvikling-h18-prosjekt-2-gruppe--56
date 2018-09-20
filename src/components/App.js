@@ -4,13 +4,17 @@ import CategoryPane from './CategoryPane.js';
 import Tabsbar from './Tabsbar.js';
 import Tittel from './Tittel.js';
 import Art from './Art.js';
+import axios from 'axios';
 
 class App extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            activeTab: 0
+            activeTab: 0,
+            activeImage: 0,
+            activeSound: 3, 
+            activeText: 6,
         }
         this.handleTabClick = this.handleTabClick.bind(this);
         this.handleCategoryClick = this.handleCategoryClick.bind(this);
@@ -20,11 +24,12 @@ class App extends Component {
         this.setState({
             activeTab: tabID
         })
-        console.log(tabID);
     }
 
     handleCategoryClick = (id) => {
-      //do something
+      this.setState({
+          activeCatagory: id
+      })
       console.log(id);
     }
 
