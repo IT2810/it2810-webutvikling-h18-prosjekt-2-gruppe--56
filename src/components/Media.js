@@ -14,7 +14,7 @@ export default function Media(props){
         .map(category =>
           //Must implement handleCategoryClick in App, send from categoryPane
           //handleClick = props.handleCategoryClick as prop in category
-          <Category id = {category.id}  text = {category.name} name = {props.name}/>
+          <Category id = {category.id} key= {category.id.toString()} text = {category.name} name = {props.name}/>
         )}
       </form>
     </div>
