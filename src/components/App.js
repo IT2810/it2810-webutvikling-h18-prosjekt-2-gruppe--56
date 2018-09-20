@@ -6,20 +6,30 @@ import Tittel from './Tittel.js';
 import Art from './Art.js';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.handleCategoryClick = this.handleCategoryClick.bind(this);
+  }
+
+  handleCategoryClick = (id) => {
+    //do something
+    console.log(id);
+  }
+
     render() {
         return (
             <div className="App">
-                <div className ="headPane">
-                    <Tittel artName = "Tittel..." />
-                    <Tabsbar />
-                </div>
-                <div className = "bodyPane">
-                    <Art />
-                    <CategoryPane />
-                </div>
+              <div className ="headPane">
+                  <Tittel artName = "Tittel..." />
+                  <Tabsbar />
+              </div>
+              <div className = "bodyPane">
+                  <Art />
+                  <CategoryPane method ={this.handleCategoryClick}/>
+              </div>
             </div>
-        );
-    }
+      );
+  }
 }
 
 export default App;
