@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import "./Tab.css"
 
 /*Should retrive handleTabClick-event from App*/

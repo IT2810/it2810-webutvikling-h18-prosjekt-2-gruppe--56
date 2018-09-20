@@ -13,6 +13,7 @@ class App extends Component {
             activeTab: 0
         }
         this.handleTabClick = this.handleTabClick.bind(this);
+        this.handleCategoryClick = this.handleCategoryClick.bind(this);
     }
 
     handleTabClick(tabID) {
@@ -22,20 +23,25 @@ class App extends Component {
         console.log(tabID);
     }
 
+    handleCategoryClick = (id) => {
+      //do something
+      console.log(id);
+    }
+
     render() {
         return (
-            <div className="App">
-                <div className ="headPane">
-                    <Tittel artName = "Tittel..." />
-                    <Tabsbar handleTabClick={this.handleTabClick} acticeTab ={this.state.activeTab} />
-                </div>
-                <div className = "bodyPane">
-                    <Art />
-                    <CategoryPane />
-                </div>
+        <div className="App">
+            <div className ="headPane">
+                <Tittel artName = "Tittel..." />
+                <Tabsbar handleTabClick={this.handleTabClick} acticeTab ={this.state.activeTab} />
             </div>
-        );
-    }
+            <div className = "bodyPane">
+                <Art />
+                <CategoryPane method ={this.handleCategoryClick}/>
+            </div>
+        </div>
+      );
+  }
 }
 
 export default App;
