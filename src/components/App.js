@@ -94,10 +94,6 @@ class App extends Component {
       this.array[tab][category].play();
   }
 
-    componentDidMount(){
-        this.handleTabClick(0);
-    }
-
     render() {
         console.log(this.state);
         return (
