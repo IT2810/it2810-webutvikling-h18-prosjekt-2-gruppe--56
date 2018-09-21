@@ -5,10 +5,11 @@ import Tekst from './Tekst.js'
 
 class Art extends Component {
     render() {
+        console.log(this.props.text);
         return (
             <div className="Art-container">
-				<Bilde/>
-				<Tekst tekst = "det var en gang en mann." />
+				<Bilde image = {this.props.image}/>
+				<Tekst text = {this.props.text} />
             </div>
         );
     }
