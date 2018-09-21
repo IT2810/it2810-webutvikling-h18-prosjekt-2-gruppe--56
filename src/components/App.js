@@ -25,7 +25,6 @@ class App extends Component {
     handleTabClick(tabID) {
         this.getData(this.state.activeImageCat.toString()+tabID.toString());
         this.getData(this.state.activeTextCat.toString()+tabID.toString());
-        this.getData(this.state.activeSoundCat.toString()+tabID.toString());
         this.setState({
             activeTab: tabID
         });
@@ -44,13 +43,12 @@ class App extends Component {
             this.setState({
                 activeTextCat: id
             });
-        }else{
+        }else{ // Oppdaterer state ved hver click
             //this.playAudioElement(this.state.activeTab, id);
             this.setState({
                 activeSoundCat: id
             });
         }
-        // Oppdaterer state ved hver click
     }
 
     getData(dataIndex){
@@ -118,5 +116,4 @@ class App extends Component {
       );
   }
 }
-
 export default App;
