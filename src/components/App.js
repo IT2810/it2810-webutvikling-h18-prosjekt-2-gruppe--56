@@ -23,6 +23,9 @@ class App extends Component {
     }
 
     handleTabClick(tabID) {
+        this.getData(this.state.activeImageCat.toString()+tabID.toString());
+        this.getData(this.state.activeTextCat.toString()+tabID.toString());
+        this.getData(this.state.activeSoundCat.toString()+tabID.toString());
         this.setState({
             activeTab: tabID
         });
@@ -99,13 +102,13 @@ class App extends Component {
         return (
         <div className="App">
             <div className ="headPane">
-                <Tittel artName = "Tittel..." />
+                <Tittel artName = "A Spectacular Responsiv Web Gallary" />
                 <Tabsbar handleTabClick={this.handleTabClick} activeTab ={this.state.activeTab} />
             </div>
             <div className = "bodyPane">
-                <Art image = {this.state.data[this.state.activeTab.toString()+this.state.activeImageCat.toString()]}
-                  text={(this.state.data[this.state.activeTab.toString()+
-                      this.state.activeTextCat.toString()])} />
+                <Art image = {this.state.data[this.state.activeImageCat.toString()+this.state.activeTab.toString()]}
+                  text={(this.state.data[this.state.activeTextCat.toString()+this.state.activeTab
+                      .toString()])} />
                 <CategoryPane method ={this.handleCategoryClick}/>
             </div>
         </div>
