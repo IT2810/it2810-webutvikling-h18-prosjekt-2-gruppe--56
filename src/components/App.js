@@ -8,8 +8,6 @@ import axios from 'axios';
 
 class App extends Component {
 
-
-
     constructor(props){
         super(props);
         const array = this.createAudioElements();
@@ -24,18 +22,6 @@ class App extends Component {
         this.handleCategoryClick = this.handleCategoryClick.bind(this);
     }
 
-    createAudioElements(){
-      let array = [];
-      for (let i = 3; i < 6; i++){
-        for (let x = 0; x<4; x++){
-          array.push(new Audio("/res/Sound/" + i.toString() + x.toString() + '.mp3'));
-        }
-      }
-    }
-    playAudioElement(tab, category){
-      this.array[tab][category].play();
-    }
-
     handleTabClick(tabID) {
         this.setState({
             activeTab: tabID
@@ -44,35 +30,34 @@ class App extends Component {
     }
 
     handleCategoryClick = (id) => {
-      let newActives = [];
-      if (id in [0,1,2]){
-          newActives = [id, this.state.activeSoundCat, this.state.activeTextCat]
-      } else if (id in [3,4,5]) {
-          newActives = [this.state.activeImageCat, id, this.state.activeTextCat]
-      } else{
-          newActives = [this.state.activeImageCat,  this.state.activeSoundCat, id]
-      }
-      let dataIndex = this.state.activeTab.toString() + id.toString();
-      let updatedData = this.getData(dataIndex);
-      console.log(updatedData);
-
-      let new_data = this.state.data;
-      new_data[dataIndex] = updatedData;
-      this.setState({
-          activeTextCat: newActives[0],
-          activeSoundCat: newActives[1],
-          activeTextCat: newActives[2],
-          data: new_data
-      })
+        //  Finner ut hvilke kategori som er oppdatert
+        let newActives = [];
+        if (id in [0,1,2]){
+            newActives = [id, this.state.activeSoundCat, this.state.activeTextCat]
+        } else if (id in [3,4,5]) {
+            newActives = [this.state.activeImageCat, id, this.state.activeTextCat]
+        } else{
+            newActives = [this.state.activeImageCat,  this.state.activeSoundCat, id]
+        }
+        this.getData(this.state.activeTab.toString() + id.toString());  //Må vi laste inn data?
+        this.setState({  // Oppdaterer state ved hver click
+            activeTextCat: newActives[0],
+            activeSoundCat: newActives[1],
+            activeTextCat: newActives[2]
+        });  //Trigger et render()-kall
     }
 
     getData(dataIndex){
         if (!this.state.data[dataIndex]){
-          let media = this.determineMedia(parseInt(dataIndex.charAt(0)));
-          return this.fetchFile(media[0], dataIndex.charAt(0), dataIndex.charAt(1), media[1]);
-        }
-        else {
-            return(this.state.data[dataIndex])
+            let media = this.determineMedia(parseInt(dataIndex.charAt(0)));
+            this.fetchFile(media[0], dataIndex.charAt(0), dataIndex.charAt(1), media[1])
+            .then(fetched_data => {
+                let new_data = this.state.data;
+                new_data[dataIndex] = fetched_data;
+                this.setState({  //Trigger et render()-kall. Kun denne oppdaterer det som vises på skjerm
+                    data : new_data
+                })
+            });
         }
     }
 
@@ -84,22 +69,29 @@ class App extends Component {
         }
         return ["Sound","mp3"]
     }
-  // Henter inn bildet og legger det i en lagret state
-    fetchFile(media, category, filename, filetype){
-      console.log("res/" + media + "/" + category + "/" + filename +  "." + filetype);
-      fetch("res/" + media + "/" + category + "/" + filename +  "." + filetype)
-      .then(response => {
-        return(response.text())
-      });
 
-        //=> text = response.text).then(text => { return or set to variable})
+    fetchFile(media, category, filename, filetype){
+        return axios.get("res/" + media + "/" + category + "/" + filename +  "." + filetype)
+        .then(response => {
+            return response.data
+        });
     }
 
-    //Må sette urlen slik at den henter dataen vi trenger(bilder) fra webserveren som kjører på den virtuelle maskinen.
+    createAudioElements(){
+      let array = [];
+      for (let i = 3; i < 6; i++){
+        for (let x = 0; x<4; x++){
+          array.push(new Audio("/res/Sound/" + i.toString() + x.toString() + '.mp3'));
+        }
+      }
+    }
+
+    playAudioElement(tab, category){
+      this.array[tab][category].play();
+    }
 
     render() {
       console.log(this.state.data);
-
         return (
         <div className="App">
             <div className ="headPane">
@@ -118,12 +110,3 @@ class App extends Component {
 }
 
 export default App;
-//Eksempel bruk av category og Media
-/*
-<Category text = "Katt"/>
-<br></br>
-<Media name = "picture" categories = {[{id:0, name:"Dyr"},{id:1 , name:"Biler"},{id:2, name:"Peperonice"}]}/>
-*/
-
-// Include  <Tabsbar/> in Apps div-tag too render Tabsbar
-// include <Bilde svg="<svg>..." to render picture

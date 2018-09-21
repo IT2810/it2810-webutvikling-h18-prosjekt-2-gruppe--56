@@ -6,8 +6,7 @@ class Bilde extends Component {
     render() {
         console.log(this.props.image);
     	return (
-			<div className = "Bilde">
-                {this.props.image}
+			<div className = "Bilde" dangerouslySetInnerHTML={{ __html: this.props.image }}>
 			</div>
     	);
     }
