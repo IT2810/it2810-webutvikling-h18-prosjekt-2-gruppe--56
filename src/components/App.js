@@ -8,8 +8,11 @@ import axios from 'axios';
 
 class App extends Component {
 
+
+
     constructor(props){
         super(props);
+        const array = this.createAudioElements();
         this.state = {
             activeTab: 0,
             activeCategory: 0,
@@ -19,22 +22,37 @@ class App extends Component {
         this.handleCategoryClick = this.handleCategoryClick.bind(this);
     }
 
+    createAudioElements(){
+      let array = [];
+      for (let i = 3; i < 6; i++){
+        for (let x = 0; x<4; x++){
+          array.push(new Audio("/res/Sound/" + i.toString() + x.toString() + '.mp3'));
+        }
+      }
+    }
+    playAudioElement(tab, category){
+      this.array[tab][category].play();
+    }
+
     handleTabClick(tabID) {
         this.setState({
             activeTab: tabID
-        })
+        });
+        //activityOnPage Handle
     }
 
     handleCategoryClick = (id) => {
       this.setState({
           activeCatagory: id
-      })
+      });
       console.log(id);
+      //activityOnPage Handle
+
     }
 
     updateText(){
-        if (isDataStoredLocaly(this.state.activeTab.toString() +this.state.activeCatagory.toString())){
-            
+        if (this.isDataStoredLocaly(this.state.activeTab.toString() +this.state.activeCatagory.toString())){
+
         }
     }
 
