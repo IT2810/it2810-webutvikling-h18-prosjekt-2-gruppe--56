@@ -15,7 +15,9 @@ class App extends Component {
         const array = this.createAudioElements();
         this.state = {
             activeTab: 0,
-            activeCategory: 0,
+            activeImageCat: 0,
+            activeSoundCat: 3,
+            activeTextCat: 6,
             data: {}
         }
         this.handleTabClick = this.handleTabClick.bind(this);
@@ -42,35 +44,49 @@ class App extends Component {
     }
 
     handleCategoryClick = (id) => {
-      this.setState({
-          activeCatagory: id
-      });
-      console.log(id);
-      //activityOnPage Handle
-
+        if (id in [0,1,2]){
+            newActives = [id, this.state.activeSoundCat, this.state.activeTextCat]
+        } else if (val in [3,4,5]) {
+            newActives = [this.state.activeImageCat, id, this.state.activeTextCat]
+        } else{
+            newActives = [this.state.activeImageCat,  this.state.activeSoundCat, id]
+        }
+        let dataIndex = this.state.activeTab.toString() + id.toString();
+        let updatedData = getData(dataIndex);
+        this.setState({
+            activeTextCat: newActives[0],
+            activeSoundCat: newActives[1],
+            activeTextCat: newActives[2],
+            data: { dataIndex: updatedData }
+        })
     }
 
-    updateText(){
-        if (this.isDataStoredLocaly(this.state.activeTab.toString() +this.state.activeCatagory.toString())){
-
+    getData(dataIndex){
+        if !(dataIndex in this.state.data;){
+            let media = determineMedia(val2)
+             return fetchFile(media[0], dataIndex.charAt(0), dataIndex.charAt(1), media[1])
+        }
+        else {
+            return(this.state.data[dataIndex])
         }
     }
 
-    isDataStoredLocaly(dataIndex){
-        return dataIndex in this.state.data;
+    determineMedia(val){
+        if (val in [0,1,2]){
+            return ["Image", "svg"]
+        } else if (val in [3,4,5]) {
+            return ["Text", "json"]
+        }
+        return ["Sound","mp3"]
     }
 
-  loadPic(path){
-    console.log("hei");
-    let xhttp = new XMLHttpRequest();
-    xhttp.open("GET", path, true);
-    xhttp.send();
-    xhttp.onload = function(e){
-        let div = document.getElementById("bilde");
-        console.log(xhttp.responseText);
-        div.innerHTML = xhttp.responseText;
-      }
-
+  // Henter inn bildet og legger det i en lagret state
+    fetchFile(media, category, filename, filetype){
+        fetch("res/" + media + "/" + category + "/" + filename +  "." + filetype)
+        .then(response => response.text())
+        .then(text => {
+            return(text);
+            });
     }
 
     //Må sette urlen slik at den henter dataen vi trenger(bilder) fra webserveren som kjører på den virtuelle maskinen.
@@ -83,7 +99,8 @@ class App extends Component {
                 <Tabsbar handleTabClick={this.handleTabClick} activeTab ={this.state.activeTab} />
             </div>
             <div className = "bodyPane">
-                <Art />
+                <Art Image = {this.state.data[this.activeTab.toString()+this.activeImageCat.toString()]}
+                    Text = {this.state.data[this.activeTab.toString()+this.activeTextCat.toString()]} />
                 <CategoryPane method ={this.handleCategoryClick}/>
             </div>
         </div>
