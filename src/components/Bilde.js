@@ -4,7 +4,6 @@ import ReactSVG from 'react-svg-inline'
 
 class Bilde extends Component {
     render() {
-        console.log(this.props.image);
     	return (
 			<div className = "Bilde" dangerouslySetInnerHTML={{ __html: this.props.image }}>
 			</div>

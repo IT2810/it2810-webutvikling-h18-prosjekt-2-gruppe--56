@@ -33,13 +33,15 @@ class App extends Component {
         //  Finner ut hvilke kategori som er oppdatert
         let newActives = [];
         if (id in [0,1,2]){
-            newActives = [id, this.state.activeSoundCat, this.state.activeTextCat]
+            newActives = [id, this.state.activeSoundCat, this.state.activeTextCat];
+            this.getData(this.state.activeTab.toString() + id.toString());  //Må vi laste inn data?
         } else if (id in [3,4,5]) {
-            newActives = [this.state.activeImageCat, id, this.state.activeTextCat]
+            newActives = [this.state.activeImageCat, id, this.state.activeTextCat];
+            this.getData(this.state.activeTab.toString() + id.toString());  //Må vi laste inn data?
         } else{
-            newActives = [this.state.activeImageCat,  this.state.activeSoundCat, id]
+            newActives = [this.state.activeImageCat,  this.state.activeSoundCat, id];
         }
-        this.getData(this.state.activeTab.toString() + id.toString());  //Må vi laste inn data?
+        console.log(newActives);
         this.setState({  // Oppdaterer state ved hver click
             activeTextCat: newActives[0],
             activeSoundCat: newActives[1],
@@ -91,7 +93,7 @@ class App extends Component {
     }
 
     render() {
-      console.log(this.state.data);
+        console.log(this.state);
         return (
         <div className="App">
             <div className ="headPane">
