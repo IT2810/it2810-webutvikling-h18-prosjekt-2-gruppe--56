@@ -32,7 +32,11 @@ class App extends Component {
       console.log(id);
     }
 
-    
+    updateText(){
+        if (isDataStoredLocaly(this.state.activeTab.toString() +this.state.activeCatagory.toString())){
+            
+        }
+    }
 
     isDataStoredLocaly(dataIndex){
         return dataIndex in this.state.data;
