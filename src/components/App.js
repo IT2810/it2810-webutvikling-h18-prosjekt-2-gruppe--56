@@ -32,6 +32,11 @@ class App extends Component {
       console.log(id);
     }
 
+    
+
+    isDataStoredLocaly(dataIndex){
+        return dataIndex in this.state.data;
+    }
 
   loadPic(path){
     console.log("hei");
