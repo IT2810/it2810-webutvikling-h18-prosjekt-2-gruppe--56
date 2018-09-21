@@ -29,11 +29,10 @@ class App extends Component {
         this.setState({
             activeTab: tabID
         });
-        //activityOnPage Handle
     }
 
     handleCategoryClick = (id) => {
-        //  Finner ut hvilke kategori som er oppdatert
+        //  Finner ut hvilke kategori som skal oppdateres
         console.log(id);
         if ([0,1,2].includes(id)){
             this.getData(id.toString()+this.state.activeTab.toString());  //Må vi laste inn data?
@@ -95,6 +94,10 @@ class App extends Component {
 
     playAudioElement(tab, category){
       this.array[tab][category].play();
+  }
+
+    componentDidMount(){
+        this.handleTabClick(0);
     }
 
     render() {
