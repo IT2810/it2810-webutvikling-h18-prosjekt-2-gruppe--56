@@ -12,9 +12,8 @@ class App extends Component {
         super(props);
         this.state = {
             activeTab: 0,
-            activeImage: 0,
-            activeSound: 3, 
-            activeText: 6,
+            activeCategory: 0,
+            data: {}
         }
         this.handleTabClick = this.handleTabClick.bind(this);
         this.handleCategoryClick = this.handleCategoryClick.bind(this);
