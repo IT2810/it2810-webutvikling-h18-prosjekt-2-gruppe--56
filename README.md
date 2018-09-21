@@ -1,3 +1,19 @@
+# IT2810 Webutvikling - Prosjekt-2
+NTNU Høst 2018, Gruppe 56
+
+Dette prosjektet går ut på å lage en online utstilling med brukerstyrte kombinasjoner av lyd, svg-grafikk og tekst. Elementene skal implementeres som en single page application (SPA) med React og data skal lastes automatisk med ajax.
+
+Utstillingen skal ha responsiv web design hvor layout, skalering og interaksjonsmuligheter tilpasses type enhet og størrelse på skjerm. Det skal se bra ut og interaksjonen skal fungere både på mobil, pad og pc med skjerm av forskjellig størrelse.
+
+###Funksjonalitet
+
+
+###SAMARBEID, BRUK AV GIT, KODING, LEVERANSE
+Ingen av medlemene i grupped hadde noe erfaring med med JavaScript fra før, men har klart å tilegne seg kunskap gjennom tutorials og andre kilder på nettet.
+Alle hadde erfaring med prosjektarbeid som innebærer bruk av git og programmeringsspråk, dermed gikk det fint og opprette prosjektet, samt navngi komponenter og kommentering av kode.
+Etter at prosjektet var oprettet, lagde vi en branch som vi kaldte "develop". Denne branchen fungerer som vår hoved branch, og det er hit vi merget all ny funksjonalitet. Med en develop branch var vi hele tiden sikker på at vi ikke merget eller endret på noe i master branchen som ikke fungerte. etter at develop branchen var på plass, oprettet vi utviklingsoppgaver (issues) med alt som måtte gjøres.  Ved en flittig bruk av issues gjennom Git får man veldig god oversikt over prosjektet sitt og kan hele veien se hva man selv og de andre i gruppen hoder på med i prosjeket.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -300,7 +316,7 @@ In the WebStorm menu `Run` select `Edit Configurations...`. Then click `+` and s
 
 Start your app by running `npm start`, then press `^D` on macOS or `F9` on Windows and Linux or click the green debug icon to start debugging in WebStorm.
 
-The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine. 
+The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine.
 
 ## Formatting Code Automatically
 
@@ -2031,7 +2047,7 @@ If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to c
     RewriteRule ^ index.html [QSA,L]
 ```
 
-It will get copied to the `build` folder when you run `npm run build`. 
+It will get copied to the `build` folder when you run `npm run build`.
 
 If you’re using [Apache Tomcat](http://tomcat.apache.org/), you need to follow [this Stack Overflow answer](https://stackoverflow.com/a/41249464/4878474).
 
@@ -2471,7 +2487,7 @@ To resolve this:
 1. Open an issue on the dependency's issue tracker and ask that the package be published pre-compiled.
   * Note: Create React App can consume both CommonJS and ES modules. For Node.js compatibility, it is recommended that the main entry point is CommonJS. However, they can optionally provide an ES module entry point with the `module` field in `package.json`. Note that **even if a library provides an ES Modules version, it should still precompile other ES6 features to ES5 if it intends to support older browsers**.
 
-2. Fork the package and publish a corrected version yourself. 
+2. Fork the package and publish a corrected version yourself.
 
 3. If the dependency is small enough, copy it to your `src/` folder and treat it as application code.
 
