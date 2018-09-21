@@ -32,6 +32,22 @@ class App extends Component {
       console.log(id);
     }
 
+
+  loadPic(path){
+    console.log("hei");
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("GET", path, true);
+    xhttp.send();
+    xhttp.onload = function(e){
+        let div = document.getElementById("bilde");
+        console.log(xhttp.responseText);
+        div.innerHTML = xhttp.responseText;
+      }
+
+    }
+
+    //Må sette urlen slik at den henter dataen vi trenger(bilder) fra webserveren som kjører på den virtuelle maskinen.
+
     render() {
         return (
         <div className="App">
