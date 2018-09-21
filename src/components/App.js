@@ -54,7 +54,9 @@ class App extends Component {
       }
       let dataIndex = this.state.activeTab.toString() + id.toString();
       let updatedData = this.getData(dataIndex);
-      let new_data = this.state.data
+      console.log(updatedData);
+
+      let new_data = this.state.data;
       new_data[dataIndex] = updatedData;
       this.setState({
           activeTextCat: newActives[0],
@@ -65,9 +67,9 @@ class App extends Component {
     }
 
     getData(dataIndex){
-        if (!dataIndex in this.state.data){
-            let media = this.determineMedia(dataIndex.charAt(0).parseInt());
-            return this.fetchFile(media[0], dataIndex.charAt(0), dataIndex.charAt(1), media[1])
+        if (!this.state.data[dataIndex]){
+          let media = this.determineMedia(parseInt(dataIndex.charAt(0)));
+          return this.fetchFile(media[0], dataIndex.charAt(0), dataIndex.charAt(1), media[1]);
         }
         else {
             return(this.state.data[dataIndex])
@@ -82,19 +84,22 @@ class App extends Component {
         }
         return ["Sound","mp3"]
     }
-
   // Henter inn bildet og legger det i en lagret state
     fetchFile(media, category, filename, filetype){
-        fetch("res/" + media + "/" + category + "/" + filename +  "." + filetype)
-        .then(response => response.text())
-        .then(text => {
-            return(text);
-            });
+      console.log("res/" + media + "/" + category + "/" + filename +  "." + filetype);
+      fetch("res/" + media + "/" + category + "/" + filename +  "." + filetype)
+      .then(response => {
+        return(response.text())
+      });
+
+        //=> text = response.text).then(text => { return or set to variable})
     }
 
     //Må sette urlen slik at den henter dataen vi trenger(bilder) fra webserveren som kjører på den virtuelle maskinen.
 
     render() {
+      console.log(this.state.data);
+
         return (
         <div className="App">
             <div className ="headPane">
@@ -103,8 +108,8 @@ class App extends Component {
             </div>
             <div className = "bodyPane">
                 <Art image = {this.state.data[this.state.activeTab.toString()+this.state.activeImageCat.toString()]}
-                    Text={JSON.parse(this.state.data[this.state.activeTab.toString()+
-                        this.state.activeTextCat.toString()]).body } />
+                  text={(this.state.data[this.state.activeTab.toString()+
+                      this.state.activeTextCat.toString()]) } />
                 <CategoryPane method ={this.handleCategoryClick}/>
             </div>
         </div>
