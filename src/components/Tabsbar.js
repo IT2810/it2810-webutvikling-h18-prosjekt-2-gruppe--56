@@ -4,12 +4,15 @@ import "./Tabsbar.css"
 
 
 export default function Tabsbar(props){
+
+	const indexes = [0,1,2,3];
+
 	return (<div className = "Tabsbar">
- 	 <div className="desktop">
-		<Tab className="columns" index ={0}/>
-		<Tab className="columns" index = {1}/>
-		<Tab className="columns" index = {2}/>
-		<Tab className="columns" index = {3}/>
+
+
+	<div className="desktop">
+		{indexes.map(Index => <Tab className="columns" index ={Index} handleTabClick = {props.handleTabClick} active = {Index == props.activeTab ? true : false}/>)}
+
 	</div>
  </div>);
 }

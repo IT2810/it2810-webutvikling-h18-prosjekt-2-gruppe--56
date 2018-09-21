@@ -19,12 +19,12 @@
 }}
 
 /* Create four equal columns that floats next to each other */
-.columns {
+/* .columns {
     float: left;
     /* width: 25%; */
-    padding: 20px;
-		columns: {width: 25%;}
-}
+  /*   padding: 20px; /* 
+	/* 	columns: {width: 25%;} /*
+		}/*
 
 .Tabsbar .Mobile{
 	display: none;
