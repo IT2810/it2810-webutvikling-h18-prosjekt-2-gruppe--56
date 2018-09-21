@@ -4,9 +4,10 @@ import ReactSVG from 'react-svg-inline'
 
 class Bilde extends Component {
     render() {
+        console.log(this.props.image);
     	return (
 			<div className = "Bilde">
-                { /*<ReactSVG svg={this.props.svg}/>*/}
+                {this.props.image}
 			</div>
     	);
     }

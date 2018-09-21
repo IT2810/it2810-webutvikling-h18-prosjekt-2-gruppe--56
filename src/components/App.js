@@ -103,7 +103,8 @@ class App extends Component {
             </div>
             <div className = "bodyPane">
                 <Art image = {this.state.data[this.state.activeTab.toString()+this.state.activeImageCat.toString()]}
-                    Text = {this.state.data[this.state.activeTab.toString()+this.state.activeTextCat.toString()]} />
+                    Text={JSON.parse(this.state.data[this.state.activeTab.toString()+
+                        this.state.activeTextCat.toString()]).body } />
                 <CategoryPane method ={this.handleCategoryClick}/>
             </div>
         </div>

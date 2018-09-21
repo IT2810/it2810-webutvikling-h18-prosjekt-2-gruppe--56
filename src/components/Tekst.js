@@ -5,7 +5,7 @@ class Tekst extends Component {
     render() {
     	return (
 			<div className = "Tekstboks">
-				<p>{this.props.tekst}</p>
+				<p>{this.props.text}</p>
 			</div>
     	);
     }
