@@ -10,18 +10,19 @@ import CategoryPane from './CategoryPane.js'
 
 class ComponentTest extends Component {
 
-  loadDoc(){
+  loadPic(path){
     console.log("hei");
     let xhttp = new XMLHttpRequest();
+    xhttp.open("GET", path, true);
     xhttp.onreadystatechange = function()
       {
       if(this.readyState == 4 && this.status == 200){
-        document.getElementById("freddie").innerHTML = this.responseText;
-        console.log(this.responseText)
+        let svg = xhttp.responseXML.documentElement;
+        svg = document.importNode(svg,true);
+        document.getElementById("bilde").appendChild(svg);
       }
     };
     //Må sette urlen slik at den henter dataen vi trenger(bilder) fra webserveren som kjører på den virtuelle maskinen.
-    xhttp.open("GET", "../test.txt",true);
     xhttp.send();
   }
 
