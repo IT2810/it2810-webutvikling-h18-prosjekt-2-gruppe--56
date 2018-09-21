@@ -1,0 +1,9 @@
+.Tittel {
+	display: flex;
+	justify-content: space-around;
+	align-items:center;
+}
+
+.Tittel h1{
+		font: Helvetica;
+}

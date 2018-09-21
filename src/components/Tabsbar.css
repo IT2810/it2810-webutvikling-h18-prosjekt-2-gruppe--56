@@ -1,0 +1,10 @@
+.Tabsbar .desktop{
+	background: black;
+	display: flex;
+    min-height:60px;
+	justify-content: space-around;
+}
+
+.Tabsbar .Mobile{
+	display: none;
+}
