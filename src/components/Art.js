@@ -5,6 +5,7 @@ import Tekst from './Tekst.js'
 
 class Art extends Component {
     render() {
+        console.log(this.props.text);
         return (
             <div className="Art-container">
 				<Bilde image = {this.props.image}/>

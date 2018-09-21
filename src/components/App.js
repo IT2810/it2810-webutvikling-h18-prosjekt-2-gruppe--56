@@ -14,8 +14,8 @@ class App extends Component {
         this.state = {
             activeTab: 0,
             activeImageCat: 0,
-            activeSoundCat: 3,
-            activeTextCat: 6,
+            activeTextCat: 3,
+            activeSoundCat: 6,
             data:{}
         }
         this.handleTabClick = this.handleTabClick.bind(this);
@@ -31,24 +31,24 @@ class App extends Component {
 
     handleCategoryClick = (id) => {
         //  Finner ut hvilke kategori som er oppdatert
-        let newActives = [];
-        if (id in [0,1,2]){
-            newActives = [id, this.state.activeSoundCat, this.state.activeTextCat];
-            this.getData(this.state.activeTab.toString() + id.toString());  //Må vi laste inn data?
-        } else if (id in [3,4,5]) {
-            newActives = [this.state.activeImageCat, id, this.state.activeTextCat];
-            this.getData(this.state.activeTab.toString() + id.toString());  //Må vi laste inn data?
-        } else{
-            newActives = [this.state.activeImageCat,  this.state.activeSoundCat, id];
-            this.playAudioElement(this.state.activeTab, id);
+        console.log(id);
+        if ([0,1,2].includes(id)){
+            this.getData(id.toString()+this.state.activeTab.toString());  //Må vi laste inn data?
+            this.setState({
+                activeImageCat: id
+            });
+        } else if ([3,4,5].includes(id)) {
+            this.getData(id.toString()+this.state.activeTab.toString() );  //Må vi laste inn data?
+            this.setState({
+                activeTextCat: id
+            });
+        }else{
+            //this.playAudioElement(this.state.activeTab, id);
+            this.setState({
+                activeSoundCat: id
+            });
         }
-        console.log(newActives);
         // Oppdaterer state ved hver click
-        this.setState({
-            activeTextCat: newActives[0],
-            activeSoundCat: newActives[1],
-            activeTextCat: newActives[2] 
-        });  //Trigger et render()-kall
     }
 
     getData(dataIndex){
@@ -66,9 +66,9 @@ class App extends Component {
     }
 
     determineMedia(val){
-        if (val in [0,1,2]){
+        if ([0,1,2].includes(val)){
             return ["Image", "svg"]
-        } else if (val in [3,4,5]) {
+        } else if ([3,4,5].includes(val)) {
             return ["Text", "json"]
         }
         return ["Sound","mp3"]
@@ -105,7 +105,7 @@ class App extends Component {
             <div className = "bodyPane">
                 <Art image = {this.state.data[this.state.activeTab.toString()+this.state.activeImageCat.toString()]}
                   text={(this.state.data[this.state.activeTab.toString()+
-                      this.state.activeTextCat.toString()]) } />
+                      this.state.activeTextCat.toString()])} />
                 <CategoryPane method ={this.handleCategoryClick}/>
             </div>
         </div>
