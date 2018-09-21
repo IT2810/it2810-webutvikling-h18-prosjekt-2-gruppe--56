@@ -1,10 +1,67 @@
+@media only screen and (min-width: 481px){
 .Tabsbar .desktop{
 	background: black;
 	display: flex;
-    min-height:60px;
-	justify-content: space-around;
+  min-height:60px;
+
+		  /* box-sizing: border-box; */
+
+}}
+
+@media only screen and (max-width: 480px){
+.Tabsbar .desktop{
+	background: black;
+	display: table;
+  max-height:20px;
+	width: 100%;
+	box-sizing: border-box;
+
+}}
+
+/* Create four equal columns that floats next to each other */
+.columns {
+    float: left;
+    /* width: 25%; */
+    padding: 20px;
+		columns: {width: 25%;}
 }
 
 .Tabsbar .Mobile{
 	display: none;
 }
+
+
+/* Clear floats after the columns */
+/* .desktop:after {
+    content: "";
+    display: table;
+    clear: both;
+} */
+/* #row1, #row2 {
+    float:left;
+}
+
+#row1 {
+  margin-right: 5px;
+}
+.Mobile
+@media only screen and (max-width: 1000px) {
+    #row1, #row2 {
+        float: none;
+        margin-right: none;
+    } */
+/* } */
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+/* @media screen and (max-width: 992px) {
+    .mobile {
+        width: 50%;
+    }
+} */
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+/* @media screen and (max-width: 600px) {
+    .mobile {
+        width: 100%;
+    }
+} */

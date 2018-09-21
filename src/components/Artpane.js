@@ -8,7 +8,7 @@ class Artpane extends Component {
     render() {
         return (
             <div className="Artpane">
-				<Tittel artName = "Her skal kunst-tittelen!!!" />
+				<Tittel artName = "Her skal kunst-tittelen!!!"/>
 				<Tabsbar />
 				<Art />
             </div>

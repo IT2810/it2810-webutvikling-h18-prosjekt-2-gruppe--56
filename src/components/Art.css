@@ -1,4 +1,12 @@
+@media only screen and (min-width: 481px){
 .Art-container {
 	width: 80%;
 	background: #3D9970;
+}
+}
+@media only screen and (max-width: 480px){
+	.Art-container {
+		width: 100%;
+		background: #3D9970;
+}
 }

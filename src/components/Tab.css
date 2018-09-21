@@ -12,8 +12,7 @@
 }
 
 
-
-@media screen only and (max-witdh: 480px) {
+@media screen only and (max-witdh: 800px) {
 	.Tab{
 		color: white;
 		text-align: center;
