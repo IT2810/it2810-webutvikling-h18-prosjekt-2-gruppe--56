@@ -40,12 +40,14 @@ class App extends Component {
             this.getData(this.state.activeTab.toString() + id.toString());  //Må vi laste inn data?
         } else{
             newActives = [this.state.activeImageCat,  this.state.activeSoundCat, id];
+            this.playAudioElement(this.state.activeTab, id);
         }
         console.log(newActives);
-        this.setState({  // Oppdaterer state ved hver click
+        // Oppdaterer state ved hver click
+        this.setState({
             activeTextCat: newActives[0],
             activeSoundCat: newActives[1],
-            activeTextCat: newActives[2]
+            activeTextCat: newActives[2] 
         });  //Trigger et render()-kall
     }
 
