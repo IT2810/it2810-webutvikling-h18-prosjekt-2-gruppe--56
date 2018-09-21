@@ -18,7 +18,6 @@ class App extends Component {
             activeImageCat: 0,
             activeSoundCat: 3,
             activeTextCat: 6,
-            data: {}
         }
         this.handleTabClick = this.handleTabClick.bind(this);
         this.handleCategoryClick = this.handleCategoryClick.bind(this);
@@ -53,16 +52,18 @@ class App extends Component {
         }
         let dataIndex = this.state.activeTab.toString() + id.toString();
         let updatedData = getData(dataIndex);
+        let new_data = this.state.data
+        new_data[dataIndex] = updatedData;
         this.setState({
             activeTextCat: newActives[0],
             activeSoundCat: newActives[1],
             activeTextCat: newActives[2],
-            data: { dataIndex: updatedData }
+            data: new_data
         })
     }
 
     getData(dataIndex){
-        if !(dataIndex in this.state.data;){
+        if (!dataIndex in this.state.data){
             let media = determineMedia(val2)
              return fetchFile(media[0], dataIndex.charAt(0), dataIndex.charAt(1), media[1])
         }
